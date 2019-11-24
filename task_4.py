@@ -12,5 +12,13 @@ def search(file_name, *args):
             yield json.loads(line)
 
 
-for recipe in search('20170107-061401-recipeitems.json', 'Fennel'):
-    print(recipe)
+# for recipe in search('20170107-061401-recipeitems.json', 'Fennel', '+mushrooms', '+butter', '+garlic'):
+#     print(recipe)
+
+
+def statistics(aggregate_function, data, property=None):
+    lst = [x for x in data]
+    return aggregate_function(lst, property)
+
+# res = statistics(min, search('20170107-061401-recipeitems.json', 'Fennel', '+mushrooms', '+butter', '+garlic'), property=None)
+# print(res)
